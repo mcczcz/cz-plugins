@@ -4,7 +4,7 @@
 #include <unordered_map>
 #include <fmt/format.h>
 
-namespace my_mod {
+namespace FakeSeed {
 
 class I18n {
 public:
@@ -51,4 +51,4 @@ inline std::string tr(const std::string& key, Args&&... args) {
     return I18n::getInstance().get(key, std::forward<Args>(args)...);
 }
 
-} // namespace my_mod
+} // namespace FakeSeed

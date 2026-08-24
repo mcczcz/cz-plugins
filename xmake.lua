@@ -53,7 +53,7 @@ target("FakeSeed")
     set_symbols("debug")
     add_headerfiles("src/FakeSeed/**.h")
     add_files("src/FakeSeed/**.cpp")
-    add_includedirs("src")
+    add_includedirs("src/FakeSeed")
     if is_config("target_type", "server") then
         add_defines("LL_PLAT_S")
     --  add_includedirs("src-server")

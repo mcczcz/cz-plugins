@@ -5,7 +5,7 @@
 #include <string>
 
 
-namespace my_mod {
+namespace FakeSeed {
 
 class ConfigManager {
 public:
@@ -39,4 +39,4 @@ private:
     std::string             mConfigPath;
 };
 
-} // namespace my_mod
+} // namespace FakeSeed

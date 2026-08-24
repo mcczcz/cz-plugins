@@ -5,7 +5,7 @@
 #include "ll/api/mod/RegisterHelper.h"
 #include <filesystem>
 
-namespace my_mod {
+namespace FakeSeed {
 ll::io::Logger& logger = Entry::getInstance().getSelf().getLogger();
 Config&         config = ConfigManager::getInstance().get();
 
@@ -61,5 +61,5 @@ bool Entry::unload() {
 
 } 
 
-LL_REGISTER_MOD(my_mod::Entry, my_mod::Entry::getInstance());
+LL_REGISTER_MOD(FakeSeed::Entry, FakeSeed::Entry::getInstance());
 }
