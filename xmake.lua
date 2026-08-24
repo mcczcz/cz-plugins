@@ -9,7 +9,7 @@ add_repositories("levimc-repo https://github.com/LiteLDev/xmake-repo.git")
 if is_config("target_type", "server") then
     add_requires("levilamina 26.20.0", {configs = {target_type = "server"}})
 else
-    add_requires("levilamina", {configs = {target_type = "client"}})
+    add_requires("levilamina 26.20.0", {configs = {target_type = "client"}})
 end
 
 add_requires("levibuildscript")
@@ -24,12 +24,12 @@ option("target_type")
     set_values("server", "client")
 option_end()
 
-target("my-mod") 
+target("FakeSeed") 
     add_rules("@levibuildscript/linkrule")
     add_rules("@levibuildscript/modpacker")
     if is_plat("windows") then
         add_defines("NOMINMAX", "UNICODE")
-        set_exceptions("none") -- To avoid conflicts with /EHa.
+        set_exceptions("none") 
         add_cxflags( "/EHa", "/utf-8", "/W4", "/w44265", "/w44289", "/w44296", "/w45263", "/w44738", "/w45204")
         add_cxflags(
             "/EHs",
@@ -51,8 +51,8 @@ target("my-mod")
     set_kind("shared")
     set_languages("c++20")
     set_symbols("debug")
-    add_headerfiles("src/**.h")
-    add_files("src/**.cpp")
+    add_headerfiles("src/FakeSeed/**.h")
+    add_files("src/FakeSeed/**.cpp")
     add_includedirs("src")
     if is_config("target_type", "server") then
         add_defines("LL_PLAT_S")
